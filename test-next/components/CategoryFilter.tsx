@@ -3,16 +3,13 @@
 import { useState } from "react";
 
 // The four possible listing tabs a user can filter 
-
 export type ListingTab = "all" | "sale" | "rent" | "service";
-
 
 // Props accepted by CategoryFilter:
 // - onTabChange: called when user switches tabs (All / For Sale / For Rent / Services)
 // - onCategoryChange: called when user picks a category pill (e.g. Electronics)
 // - onSortChange: called when user changes the sort dropdown
 // - totalCount: optional number shown as "X listings"
-
 interface CategoryFilterProps {
   onTabChange?: (tab: ListingTab) => void;
   onCategoryChange?: (cat: string) => void;
@@ -20,6 +17,7 @@ interface CategoryFilterProps {
   totalCount?: number;
 }
 
+// Top-level tabs shown as an underline nav
 const TABS = [
   { label: "All",      value: "all"     },
   { label: "For Sale", value: "sale"    },
@@ -27,6 +25,7 @@ const TABS = [
   { label: "Services", value: "service" },
 ] as const;
 
+// Horizontal scrollable category pills
 const CATEGORIES = [
   { emoji: "🏷️", label: "All Categories", value: "all"         },
   { emoji: "📱", label: "Electronics",    value: "electronics" },
@@ -39,6 +38,7 @@ const CATEGORIES = [
   { emoji: "⚽", label: "Sports",         value: "sports"      },
 ];
 
+// Options available in the sort dropdown on the right
 const SORT_OPTIONS = [
   { label: "Newest",             value: "newest"     },
   { label: "Price: Low to High", value: "price_asc"  },
