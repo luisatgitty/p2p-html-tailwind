@@ -2,7 +2,16 @@
 
 import { useState } from "react";
 
+// The four possible listing tabs a user can filter 
+
 export type ListingTab = "all" | "sale" | "rent" | "service";
+
+
+// Props accepted by CategoryFilter:
+// - onTabChange: called when user switches tabs (All / For Sale / For Rent / Services)
+// - onCategoryChange: called when user picks a category pill (e.g. Electronics)
+// - onSortChange: called when user changes the sort dropdown
+// - totalCount: optional number shown as "X listings"
 
 interface CategoryFilterProps {
   onTabChange?: (tab: ListingTab) => void;
