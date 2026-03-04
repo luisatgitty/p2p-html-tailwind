@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 
+//  ICON COMPONENTS
+//  Inline SVG icons kept as small components
+//  so they're easy to swap out later.
+
 const CartIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
